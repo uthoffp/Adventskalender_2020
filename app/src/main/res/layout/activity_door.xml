@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/doorbackground"
+    android:id="@+id/layout"
+    tools:context=".DoorActivity">
+
+    <TextView
+        android:id="@+id/door_txt_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="37dp"
+        android:text="1. Türchen"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/door_scrollView"
+        app:layout_constraintEnd_toEndOf="@+id/door_scrollView"
+        app:layout_constraintStart_toStartOf="@+id/door_scrollView" />
+
+    <ScrollView
+        android:id="@+id/door_scrollView"
+        android:layout_width="250dp"
+        android:layout_height="391dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"></ScrollView>
+
+    <ImageView
+        android:id="@+id/door_img"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/door_txt_head"
+        app:layout_constraintEnd_toEndOf="@+id/door_txt_head"
+        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Antwort:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/txtanswer"
+        app:layout_constraintStart_toStartOf="@+id/txtanswer" />
+
+    <EditText
+        android:id="@+id/txtanswer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:inputType="number"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/door_scrollView"
+        app:layout_constraintEnd_toStartOf="@+id/door_scrollView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/door_scrollView"
+        app:layout_constraintVertical_bias="0.63" />
+
+    <Button
+        android:id="@+id/answerbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:onClick="onAnswer"
+        android:text="Prüfen"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/txtanswer"
+        app:layout_constraintStart_toStartOf="@+id/txtanswer"
+        app:layout_constraintTop_toBottomOf="@+id/txtanswer" />
+</androidx.constraintlayout.widget.ConstraintLayout>
